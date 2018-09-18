@@ -1,8 +1,8 @@
 // 'use strict'
 const fs = require('fs')
-const dataURL = 'static/server-db/login.json'
-const dataURL2 ='static/server-db/handlerPrice.json' 
-const dataURL3 = 'static/server-db/getTableData.json'
+const dataURL = '../server-db/login.json'
+const dataURL2 ='../server-db/handlerPrice.json' 
+const dataURL3 = '../server-db/getTableData.json'
 const nodeJsonWork = require('../work/nodeJsonWork.js')
 
 module.exports= {
@@ -208,15 +208,15 @@ createUserInformation: function(param) {
 	return new Promise((resolve, reject) => {
 
 		var username = 'username1'
-		let userPath = 'static/server-db/user/'+ username+ '.json'
+		let userPath = '../server-db/user/'+ username+ '.json'
 
-		var path1 = 'static/server-db/title/'+ username + '.json'
+		var path1 = '../server-db/title/'+ username + '.json'
 
-		var path2 = 'static/server-db/classify/'+ username + '.json'
+		var path2 = '../server-db/classify/'+ username + '.json'
 
-		var path3 = 'static/server-db/imgUrl/'+ username + '.json'
+		var path3 = '../server-db/imgUrl/'+ username + '.json'
 
-		var path4 = 'static/server-db/editContent/'+ username + '.json'
+		var path4 = '../server-db/editContent/'+ username + '.json'
 		var array = [path1, path2, path3,path4]
 		var userData = {
 				title: path1,
@@ -315,7 +315,7 @@ showQianduan: function(data) {
 		// 这里假设用户为username1
 	var username = 'username1'
 	var classifyid = data.classify
-   fs.readFile('static/server-db/user/'+ username +'.json','utf8',(err, ret) => {
+   fs.readFile('../server-db/user/'+ username +'.json','utf8',(err, ret) => {
    	if(err) {
    		throw err;
    		reject({err: '1',tip: '服务器错误'})
