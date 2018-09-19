@@ -75,9 +75,10 @@ app.route('/st-edit')
 */ 
 var Storage = multer.diskStorage({
     destination: function (req, file, callback) {
-        callback(null, "./public/javascripts/pictures");
+        callback(null, "./public/pictures");
     },
     filename: function (req, file, callback) {
+    	console.log(111,file.fieldname)
         callback(null, file.fieldname + "_" + Date.now() + "_" + file.originalname);
     }
 });
@@ -125,6 +126,11 @@ app.route('/qianduan')
   .catch((err) => {
     res.json(err)
   })
+})
+
+app.get('/public/pictures/*', function (req, res) {
+    res.sendFile( __dirname + "/" + req.url );
+    console.log("Request for " + req.url + " received.");
 })
 
 

@@ -208,15 +208,15 @@ createUserInformation: function(param) {
 	return new Promise((resolve, reject) => {
 
 		var username = 'username1'
-		let userPath = '/public/javascripts/server-db/user/'+ username+ '.json'
+		let userPath = './public/javascripts/server-db/user/'+ username+ '.json'
 
-		var path1 = '/public/javascripts/server-db/title/'+ username + '.json'
+		var path1 = './public/javascripts/server-db/title/'+ username + '.json'
 
-		var path2 = '/public/javascripts/server-db/classify/'+ username + '.json'
+		var path2 = './public/javascripts/server-db/classify/'+ username + '.json'
 
-		var path3 = '/public/javascripts/server-db/imgUrl/'+ username + '.json'
+		var path3 = './public/javascripts/server-db/imgUrl/'+ username + '.json'
 
-		var path4 = '/public/javascripts/server-db/editContent/'+ username + '.json'
+		var path4 = './public/javascripts/server-db/editContent/'+ username + '.json'
 		var array = [path1, path2, path3,path4]
 		var userData = {
 				title: path1,
